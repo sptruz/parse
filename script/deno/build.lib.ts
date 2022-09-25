@@ -58,11 +58,11 @@ const recursiveAndbuild = (
             }
 
             if (target === '@sptruz/color-name') {
-              return `import ColorName from 'https://deno.land/x/sptruz_color_name@0.0.0-beta.0.0.1/mod.ts';`;
+              return `import ColorName from 'https://deno.land/x/sptruz_color_name@0.0.0-beta.0.0.3/mod.ts';`;
             }
 
             if (target === '@sptruz/convert') {
-              return `import convert from 'https://deno.land/x/sptruz_convert@0.0.0-beta.0.0.1/mod.ts';`;
+              return `import convert from 'https://deno.land/x/sptruz_convert@0.0.0-beta.0.0.2/mod.ts';`;
             }
 
             const targetNodePath = join(dirname(nodePath), target);
@@ -105,8 +105,7 @@ const recursiveAndbuild = (
 
   const mod = `import Parse from './index.ts';
 export * from './index.ts';
-export default Parse;
-\r\n`;
+export default Parse;\r\n`;
 
   writeFileSync(join(denoSrcRoot, 'mod.ts'), mod, {
     encoding: 'utf-8',

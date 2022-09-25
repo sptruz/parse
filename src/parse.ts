@@ -18,15 +18,15 @@ const parse = (str: string) => {
   if (hex) return getHEX(hex[0]);
 
   const hsl = HSL4_REGEX.exec(str) || HSL3_REGEX.exec(str);
-  if (hsl) return getHSL([hsl[1], hsl[2], hsl[3]]);
+  if (hsl) return getHSL([hsl[1], hsl[2], hsl[3], hsl[4]]);
 
   const rgb =
-    RGB3_NUMBER_REGEX.exec(str) ||
-    RGB3_PERCENTAGE_REGEX.exec(str) ||
     RGB4_NUMBER_REGEX.exec(str) ||
-    RGB4_PERCENTAGE_REGEX.exec(str);
+    RGB4_PERCENTAGE_REGEX.exec(str) ||
+    RGB3_NUMBER_REGEX.exec(str) ||
+    RGB3_PERCENTAGE_REGEX.exec(str);
 
-  if (rgb) return getRGB([rgb[1], rgb[2], rgb[3]]);
+  if (rgb) return getRGB([rgb[1], rgb[2], rgb[3], rgb[4]]);
 
   const transparent = TRANSPARENT_REGEX.exec(str);
   if (transparent) return getRGB([0, 0, 0, 0]);
