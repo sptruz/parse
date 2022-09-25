@@ -28,7 +28,7 @@ type RGBa = [
   r: string | number,
   g: string | number,
   b: string | number,
-  a?: number,
+  a?: string | number,
 ];
 
 const getRGB = ([r, g, b, a = 1]: RGBa) => {
@@ -44,7 +44,7 @@ const getHEX = (hex: string) => {
   return getRGB([r, g, b, a]);
 };
 
-type HSLa = [h: string, s: string, l: string, a?: number];
+type HSLa = [h: string, s: string, l: string, a?: string | number];
 
 const getHSL = ([h, s, l, a = 1]: HSLa) => {
   let _h = 0;
